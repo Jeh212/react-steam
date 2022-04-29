@@ -46,12 +46,14 @@ export const Section01 = styled.div`
 export const Section02 = styled.div`
   .games-grid {
     display: grid;
+    width: 100vw;
+
+    gap: 50px;
+    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
     padding: 50px;
-    gap: 80px;
-    grid-template-columns: repeat(auto-fill, minmax(min(2px, 100%), 1fr));
 
     div {
-      width: 250px;
+      width: 300px;
       img {
         width: 100%;
         height: 100%;
