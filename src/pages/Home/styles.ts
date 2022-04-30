@@ -11,8 +11,6 @@ export const HomePage = styled.main`
   display: grid;
 `;
 
-export const TitleLabel = styled.title``;
-
 export const Section01 = styled.div`
   div {
     width: 800px;
@@ -48,6 +46,7 @@ export const Section02 = styled.div`
     display: grid;
     padding: 50px;
     gap: 80px;
+
     grid-template-columns: repeat(auto-fill, minmax(min(2px, 100%), 1fr));
 
     div {
