@@ -44,19 +44,63 @@ export const Section01 = styled.div`
 `;
 
 export const Section02 = styled.div`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+
   .games-grid {
     display: grid;
-    width: 100vw;
+    max-width: 1135px;
+    width: 100%;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(min(536px, 100%), 1fr));
+    padding: 15px;
 
-    gap: 50px;
-    grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-    padding: 50px;
+    .content {
+      max-width: 536px;
+      max-height: 408px;
+      width: 100%;
+      height: 100%;
+      display: grid;
+      filter: drop-shadow(10px 10px 15px rgba(0, 0, 0, 0.25));
 
-    div {
-      width: 300px;
-      img {
-        width: 100%;
+      .imgGame {
+        max-height: 333px;
         height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 20px;
+        }
+      }
+      .info {
+        display: flex;
+        max-height: 75.56px;
+        height: 100%;
+        border-radius: 0px 0px 20px 20px;
+        justify-content: space-between;
+        padding: 10px;
+        background: #610094;
+
+        font-size: 24px;
+
+        .amountName {
+          color: white;
+          display: grid;
+          padding-left: 10px;
+          font-weight: 400;
+
+          span:nth-child(2) {
+            font-weight: 300;
+            font-size: 18px;
+          }
+        }
+        .icons {
+          display: flex;
+          justify-content: space-evenly;
+          max-width: 170px;
+          width: 100%;
+        }
       }
     }
   }

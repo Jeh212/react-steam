@@ -6,6 +6,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Jogos } from '../interface/IJogos';
 import avatar from '../../assets/avatar.jpg';
+import iconLinux from '../../assets/svg/linux-penguin.svg';
+import windowsIcon from '../../assets/svg/windows.svg';
+import iconIpple from '../../assets/svg/apple.svg';
 
 type Shop = {
   id: string;
@@ -69,17 +72,80 @@ function Home() {
 
         <Section02>
           <div className='games-grid'>
-            <div>
-              <img src={avatar} alt='' />
+            <div className='content'>
+              <div className='imgGame'>
+                <img src={avatar} alt='' />
+              </div>
+
+              <div className='info'>
+                <div className='amountName'>
+                  <span>GTA 5</span>
+                  <span>R$ 120,00</span>
+                </div>
+
+                <div className='icons'>
+                  <img src={iconLinux} alt='iconLinux' />
+                  <img src={windowsIcon} alt='windowsIcon' />
+                  <img src={iconIpple} alt='iconIpple' />
+                </div>
+              </div>
             </div>
-            <div>
-              <img src={avatar} alt='' />
+
+            <div className='content'>
+              <div className='imgGame'>
+                <img src={avatar} alt='' />
+              </div>
+
+              <div className='info'>
+                <div className='amountName'>
+                  <span>GTA 5</span>
+                  <span>R$ 120,00</span>
+                </div>
+
+                <div className='icons'>
+                  <img src={iconLinux} alt='iconLinux' />
+                  <img src={windowsIcon} alt='windowsIcon' />
+                  <img src={iconIpple} alt='iconIpple' />
+                </div>
+              </div>
             </div>
-            <div>
-              <img src={avatar} alt='' />
+
+            <div className='content'>
+              <div className='imgGame'>
+                <img src={avatar} alt='' />
+              </div>
+
+              <div className='info'>
+                <div className='amountName'>
+                  <span>GTA 5</span>
+                  <span>R$ 120,00</span>
+                </div>
+
+                <div className='icons'>
+                  <img src={iconLinux} alt='iconLinux' />
+                  <img src={windowsIcon} alt='windowsIcon' />
+                  <img src={iconIpple} alt='iconIpple' />
+                </div>
+              </div>
             </div>
-            <div>
-              <img src={avatar} alt='' />
+
+            <div className='content'>
+              <div className='imgGame'>
+                <img src={avatar} alt='' />
+              </div>
+
+              <div className='info'>
+                <div className='amountName'>
+                  <span>GTA 5</span>
+                  <span>R$ 120,00</span>
+                </div>
+
+                <div className='icons'>
+                  <img src={iconLinux} alt='iconLinux' />
+                  <img src={windowsIcon} alt='windowsIcon' />
+                  <img src={iconIpple} alt='iconIpple' />
+                </div>
+              </div>
             </div>
           </div>
         </Section02>
