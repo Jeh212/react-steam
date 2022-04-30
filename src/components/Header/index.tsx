@@ -3,10 +3,10 @@ import { Search, ShoppingBag } from 'react-feather';
 import avatar from '../../assets/avatar.jpg';
 
 type CartProp = {
-  jogos?: string[];
+  jogosAmout: any;
 };
 
-function Header({ jogos }: CartProp) {
+function Header({ jogosAmout }: CartProp) {
   return (
     <Container>
       <HeaderItens>
@@ -24,7 +24,7 @@ function Header({ jogos }: CartProp) {
       <Cart>
         <CartContent>
           <ShoppingBag />
-          <strong>{jogos?.length}</strong>
+          <strong>{jogosAmout?.length}</strong>
         </CartContent>
       </Cart>
     </Container>
