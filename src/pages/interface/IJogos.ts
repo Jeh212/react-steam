@@ -1,5 +1,5 @@
 export type Jogos = {
-  id?: string;
+  _id?: string;
   titulo: string;
   capa: string;
   photos: string[];

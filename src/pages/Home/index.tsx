@@ -10,14 +10,8 @@ import iconLinux from '../../assets/svg/linux-penguin.svg';
 import windowsIcon from '../../assets/svg/windows.svg';
 import iconIpple from '../../assets/svg/apple.svg';
 
-type Shop = {
-  id: string;
-  destaquesDaSemana: Jogos[];
-  createdAt: Date;
-};
-
 type UserCart = {
-  id: string;
+  _id: string;
   userId: string;
   total: string;
   createdAt: Date;
@@ -25,28 +19,26 @@ type UserCart = {
 };
 
 function Home() {
-  const [weekleGames, setWeekleGames] = useState<Shop>();
+  const [weekleGames, setWeekleGames] = useState<Jogos[]>();
   const [userCart, setUserCart] = useState<UserCart>();
 
   useEffect(() => {
     axios
-      .get('http://localhost:3333/store/getWeek/626b7dba07872547c6a08b61')
+      .get('http://localhost:8080/Jogos')
       .then((response) => setWeekleGames(response.data));
   }, []);
 
   useEffect(() => {
     axios
-      .get(
-        'http://localhost:3333/carts/userCart/3409b504-c4bb-4faa-9925-aeb57272d8e3'
-      )
+      .get('http://localhost:8080/Carrinho')
       .then((response) => setUserCart(response.data));
   }, []);
 
-  const games = weekleGames?.destaquesDaSemana;
+  const games = weekleGames;
 
   return (
     <>
-      <Header jogos={userCart?.jogos} />
+      <Header jogosAmout={userCart?.jogos} />
       <HomePage>
         <Section01>
           <Carousel
@@ -59,7 +51,7 @@ function Home() {
             autoFocus={true}
           >
             {games?.map((game: Jogos) => (
-              <div key={game.id}>
+              <div key={game._id}>
                 <img src={game.capa} />
                 <div className='game-details'>
                   <strong>{game.titulo}</strong>
@@ -72,81 +64,25 @@ function Home() {
 
         <Section02>
           <div className='games-grid'>
-            <div className='content'>
-              <div className='imgGame'>
-                <img src={avatar} alt='' />
-              </div>
-
-              <div className='info'>
-                <div className='amountName'>
-                  <span>GTA 5</span>
-                  <span>R$ 120,00</span>
+            {games?.map((game) => {
+              <div className='content' key={game._id}>
+                <div className='imgGame'>
+                  <img src={game.capa} alt='' />
                 </div>
 
-                <div className='icons'>
-                  <img src={iconLinux} alt='iconLinux' />
-                  <img src={windowsIcon} alt='windowsIcon' />
-                  <img src={iconIpple} alt='iconIpple' />
+                <div className='info'>
+                  <div className='amountName'>
+                    <span>{game.titulo}</span>
+                    <span>R$ {game.preco}</span>
+                  </div>
+                  <div className='icons'>
+                    <img src={iconLinux} alt='iconLinux' />
+                    <img src={windowsIcon} alt='windowsIcon' />
+                    <img src={iconIpple} alt='iconIpple' />
+                  </div>
                 </div>
-              </div>
-            </div>
-
-            <div className='content'>
-              <div className='imgGame'>
-                <img src={avatar} alt='' />
-              </div>
-
-              <div className='info'>
-                <div className='amountName'>
-                  <span>GTA 5</span>
-                  <span>R$ 120,00</span>
-                </div>
-
-                <div className='icons'>
-                  <img src={iconLinux} alt='iconLinux' />
-                  <img src={windowsIcon} alt='windowsIcon' />
-                  <img src={iconIpple} alt='iconIpple' />
-                </div>
-              </div>
-            </div>
-
-            <div className='content'>
-              <div className='imgGame'>
-                <img src={avatar} alt='' />
-              </div>
-
-              <div className='info'>
-                <div className='amountName'>
-                  <span>GTA 5</span>
-                  <span>R$ 120,00</span>
-                </div>
-
-                <div className='icons'>
-                  <img src={iconLinux} alt='iconLinux' />
-                  <img src={windowsIcon} alt='windowsIcon' />
-                  <img src={iconIpple} alt='iconIpple' />
-                </div>
-              </div>
-            </div>
-
-            <div className='content'>
-              <div className='imgGame'>
-                <img src={avatar} alt='' />
-              </div>
-
-              <div className='info'>
-                <div className='amountName'>
-                  <span>GTA 5</span>
-                  <span>R$ 120,00</span>
-                </div>
-
-                <div className='icons'>
-                  <img src={iconLinux} alt='iconLinux' />
-                  <img src={windowsIcon} alt='windowsIcon' />
-                  <img src={iconIpple} alt='iconIpple' />
-                </div>
-              </div>
-            </div>
+              </div>;
+            })}
           </div>
         </Section02>
       </HomePage>
