@@ -15,13 +15,14 @@ export const CartInfo = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1400px;
+  width: 100vw;
 
   .title-cart {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-left: 100px;
+    max-width: 423px;
+    width: 100%;
 
     title {
       display: flex;
@@ -37,24 +38,66 @@ export const CartInfo = styled.div`
   }
 `;
 
-export const Itens = styled.section`
-  background: var(--grey);
-  margin-top: 60px;
-  margin-left: 290px;
-  margin-right: 290px;
-  justify-content: center;
-  border-radius: 20px;
-`;
+export const GridContent = styled.div`
+  display: grid;
+  margin-top: 30px;
 
-export const GamesInfo = styled.div`
-  display: flex;
-  width: 100%;
-  height: 200px;
-`;
+  .contentGame {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
-export const Game = styled.div`
-  img {
-    width: 200px;
-    border-radius: 20px;
+    border-bottom: solid 3px rgba(255, 255, 255, 0.2);
+    max-height: 223px;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(255, 255, 255, 0.04);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .imgInfo {
+      max-width: 501px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .imgGame {
+        max-height: 394px;
+
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .amountName {
+        color: white;
+        display: grid;
+        font-weight: 400;
+
+        span:nth-child(2) {
+          margin-top: 30px;
+          font-weight: 300;
+          font-size: 18px;
+        }
+      }
+    }
+
+    .icons {
+      display: flex;
+      justify-content: space-evenly;
+      max-width: 324px;
+      width: 100%;
+      div {
+        height: 78px;
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
   }
 `;
