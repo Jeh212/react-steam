@@ -11,8 +11,6 @@ export const HomePage = styled.main`
   display: grid;
 `;
 
-export const TitleLabel = styled.title``;
-
 export const Section01 = styled.div`
   div {
     width: 800px;
@@ -66,6 +64,7 @@ export const Section02 = styled.div`
 
       .imgGame {
         max-height: 333px;
+
         height: 100%;
         img {
           width: 100%;

@@ -50,9 +50,9 @@ function Home() {
       <HomePage>
         <Section01>
           <Carousel
-            interval={3000}
-            autoPlay={true}
             infiniteLoop={true}
+            interval={3000}
+            autoPlay={false}
             axis='horizontal'
             showThumbs={false}
             showArrows={false}
