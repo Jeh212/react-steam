@@ -12,6 +12,7 @@ export const HomePage = styled.main`
 `;
 
 export const Section01 = styled.div`
+  justify-content: center;
   div {
     width: 800px;
     border-radius: 3%;
