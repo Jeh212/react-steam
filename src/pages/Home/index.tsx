@@ -5,12 +5,11 @@ import { Carousel } from 'react-responsive-carousel';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Jogos } from '../interface/IJogos';
-import avatar from '../../assets/avatar.jpg';
 import iconLinux from '../../assets/svg/linux-penguin.svg';
 import windowsIcon from '../../assets/svg/windows.svg';
 import iconIpple from '../../assets/svg/apple.svg';
 
-type UserCart = {
+export type UserCart = {
   _id: string;
   userId: string;
   total: string;
@@ -20,7 +19,7 @@ type UserCart = {
 
 function Home() {
   const [weekleGames, setWeekleGames] = useState<Jogos[]>();
-  const [userCart, setUserCart] = useState<UserCart>();
+  const [userCart, setUserCart] = useState<any>();
 
   useEffect(() => {
     axios
@@ -38,7 +37,7 @@ function Home() {
 
   return (
     <>
-      <Header jogosAmout={userCart?.jogos} />
+      <Header jogosAmout={userCart[0].jogos} />
       <HomePage>
         <Section01>
           <Carousel

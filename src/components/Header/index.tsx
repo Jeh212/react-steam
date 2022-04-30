@@ -3,7 +3,7 @@ import { Search, ShoppingBag } from 'react-feather';
 import avatar from '../../assets/avatar.jpg';
 
 type CartProp = {
-  jogosAmout?: string[];
+  jogosAmout: any;
 };
 
 function Header({ jogosAmout }: CartProp) {
